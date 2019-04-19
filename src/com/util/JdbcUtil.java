@@ -1,11 +1,11 @@
-package com.sql;
+package com.util;
 
 import java.sql.*;
 
-public class Jdbc {
-    public static Connection conn(){
+public class JdbcUtil {
+    public static Connection conn(String dbname){
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/java?serverTimezone=GMT%2B8";
+        String url = "jdbc:mysql://localhost:3306/"+dbname+"?serverTimezone=GMT%2B8";
 
         String username = "root";
         String password = "root";
@@ -22,7 +22,7 @@ public class Jdbc {
         }
         return conn;
     }
-    public static void closeAllResource(Connection conn,PreparedStatement st,ResultSet rs) {
+    public static void closeAllResource(Connection conn, PreparedStatement st, ResultSet rs) {
         if (conn!=null) {
             try {
                 conn.close();

@@ -1,40 +1,8 @@
-package com.user;
+package com.model.user;
 
 public class User {
     private String uname;
     private String pwd;
-    private String error;
-
-    public String getError() {
-        return error;
-    }
-
-    public void setError(String error) {
-        this.error = error;
-    }
-
-    public User(){}
-
-    public User(String uname, String pwd) {
-        this.uname = uname;
-        this.pwd = pwd;
-    }
-
-    public String getUname() {
-        return uname;
-    }
-
-    public void setUname(String uname) {
-        this.uname = uname;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
 
     @Override
     public String toString() {
@@ -61,5 +29,35 @@ public class User {
         int result = uname != null ? uname.hashCode() : 0;
         result = 31 * result + (pwd != null ? pwd.hashCode() : 0);
         return result;
+    }
+
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
+    public User(String uname, String pwd) {
+        this.uname = uname;
+        this.pwd = pwd;
+    }
+
+    public User() {
+    }
+    //判断是否为空 为空返回ture 不为空返回false
+    public boolean isEmpty(){
+        if(this.getUname() == null || this.getPwd() == null)
+            return true;
+        else return false;
     }
 }

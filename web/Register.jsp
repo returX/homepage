@@ -10,11 +10,11 @@
 <head>
     <title>欢迎注册</title>
 </head>
-<body>
+<bsody>
     <form action="/toRegister.do" method="post">
         <input type="text" name="uname">
         <input type="password" name="pwd">
         <input type="submit" value="注册">
     </form>
-</body>
+</bsody>
 </html>

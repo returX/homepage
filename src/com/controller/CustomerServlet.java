@@ -1,6 +1,5 @@
 package com.controller;
 
-import com.user.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 @WebServlet(name = "CustomerServlet",urlPatterns = {"*.do"})
@@ -47,11 +45,7 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void toRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //请求转发到index.jsp
-        String uname = request.getParameter("uanme");
-        String pwd = request.getParameter("pwd");
-        User u =new User(uname,pwd);
-        request.getSession().setAttribute("user",u);
+        //请求转发给RegisterServlet做数据处理
         request.getRequestDispatcher("/RegisterServlet").forward(request,response);
     }
 }

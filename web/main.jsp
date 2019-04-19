@@ -1,4 +1,4 @@
-<%@ page import="com.user.User" %><%--
+<%@ page import="com.model.user.User" %><%--
   Created by IntelliJ IDEA.
   User: ASUS
   Date: 2019/4/12
